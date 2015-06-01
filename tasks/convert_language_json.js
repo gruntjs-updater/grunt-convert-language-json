@@ -16,7 +16,9 @@ module.exports = function(grunt) {
 			prefix: "",
 			suffix: "",
 			checkIntegrity: true
-		})
+		});
+
+		var done = this.async();
 
 		if(this.files.length !== 1 || this.files[0].src.length !== 1) {
 			grunt.fatal("Only a single input file can be used.");
@@ -116,6 +118,7 @@ module.exports = function(grunt) {
 					}
 				}
 			}
+			done();
 		});
 	});
 
