@@ -20,7 +20,7 @@ module.exports = function(grunt) {
 
 		// Configuration to be run (and then tested).
 		convert_language_json: {
-			ouput_in_folder: {
+			output_in_folder: {
 				files: [{
 					src: 'test/language.json',
 					dest: 'tmp/folder'
