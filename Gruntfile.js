@@ -34,8 +34,10 @@ module.exports = function(grunt) {
 				}]
 			},
 			output_in_folder_with_prefix_suffix: {
-				prefix: 'prefix.',
-				suffix: '.suffix',
+				options: {
+					prefix: 'prefix.',
+					suffix: '.suffix',
+				},
 				files: [{
 					src: 'test/language.json',
 					dest: 'tmp/folder_prefix'
