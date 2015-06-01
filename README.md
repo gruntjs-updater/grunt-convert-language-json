@@ -37,17 +37,17 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
+#### options.prefix
 Type: `String`
-Default value: `',  '`
+Default value: `''`
 
-A string value that is used to do something with whatever.
+A string value that is prepended to the language key.
 
-#### options.punctuation
+#### options.suffix
 Type: `String`
-Default value: `'.'`
+Default value: `''`
 
-A string value that is used to do something else with whatever else.
+A string value that is appended to the language key.
 
 ### Usage Examples
 
