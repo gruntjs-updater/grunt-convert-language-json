@@ -1,0 +1,12 @@
+{
+	"test.key1": {
+		"en": "This is a test.",
+		"de": "Dies ist ein Test.",
+		"fr": "C'est un test."
+	},
+	"test.key2": {
+		"en": "This is the second test.",
+		"de": "Dies ist der zweite Test.",
+		"fr": "C'est le test second."
+	}
+}

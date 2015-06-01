@@ -10,20 +10,20 @@
 
 module.exports = function(grunt) {
 
-	// Please see the Grunt documentation for more information regarding task
-	// creation: http://gruntjs.com/creating-tasks
-
 	grunt.registerMultiTask('convert_language_json', 'This Grunt plugin converts the structure of a language.json', function() {
-		// Merge task-specific and/or target-specific options with these defaults.
-		var options = this.options({
-			punctuation: '.',
-			separator: ', '
-		});
+
+		if(this.files.length !== 1 || this.files[0].src.length !== 1) {
+			grunt.warn("Only a single input file can be used.");
+		}
+
+		var prefix = this.data.prefix || "";
+		var suffix = this.data.suffix || "";
 
 		// Iterate over all specified file groups.
 		this.files.forEach(function(f) {
-			// Concat specified files.
-			var src = f.src.filter(function(filepath) {
+			var finalJson = {};
+
+			f.src.filter(function(filepath) {
 				// Warn on and remove invalid source files (if nonull was set).
 				if (!grunt.file.exists(filepath)) {
 					grunt.log.warn('Source file "' + filepath + '" not found.');
@@ -32,18 +32,54 @@ module.exports = function(grunt) {
 					return true;
 				}
 			}).map(function(filepath) {
-				// Read file source.
-				return grunt.file.read(filepath);
-			}).join(grunt.util.normalizelf(options.separator));
+				var initialJson = grunt.file.readJSON(filepath);
+				for(var key in initialJson) {
+					if(initialJson.hasOwnProperty(key)) {
+						for(var language in initialJson[key]) {
+							if(initialJson[key].hasOwnProperty(language)) {
+								finalJson[language] = finalJson[language] || {};
+								finalJson[language][key] = initialJson[key][language];
+							}
+						}
+					}
+				}
+			});
 
-			// Handle options.
-			src += options.punctuation;
+			// adds a prefix or suffix to the keys
+			if(prefix !== "" || suffix !== "") {
+				var finalJsonTemp = {};
+				for(var language in finalJson) {
+					if(finalJson.hasOwnProperty(language)) {
+						finalJsonTemp[language] = {};
+						for(var key in finalJson[language]) {
+							if(finalJson[language].hasOwnProperty(key)) {
+								finalJsonTemp[language][prefix + key + suffix] = finalJson[language][key];
+							}
+						}
+					}
+				}
+				finalJson = finalJsonTemp;
+			}
 
-			// Write the destination file.
-			grunt.file.write(f.dest, src);
-
-			// Print a success message.
-			grunt.log.writeln('File "' + f.dest + '" created.');
+			if(typeof f.destType !== "undefined" && f.destType === 'file') {
+				grunt.file.write(f.dest, JSON.stringify(finalJson));
+			}
+			// destType === 'folder'
+			else {
+				for(var language in finalJson) {
+					if(finalJson.hasOwnProperty(language)) {
+						if(f.dest.slice(-1) !== "/" && f.dest.slice(-1) !== "\\") {
+							if(f.dest.indexOf("\\") !== -1) {
+								f.dest = f.dest + "\\";
+							}
+							else {
+								f.dest = f.dest + "/";
+							}
+						}
+						grunt.file.write(f.dest + language + ".json", JSON.stringify(finalJson[language]));
+					}
+				}
+			}
 		});
 	});
 
