@@ -4,8 +4,7 @@
 	"version": "0.1.0",
 	"homepage": "https://github.com/ssc-hrep3/grunt-convert-language-json",
 	"author": {
-		"name": "Sebastian Schrepfer",
-		"email": "sebschrepfer@hotmail.com"
+		"name": "Sebastian Schrepfer"
 	},
 	"repository": {
 		"type": "git",
