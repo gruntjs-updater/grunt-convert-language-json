@@ -57,7 +57,7 @@ Checks, that every key is mentioned in every language.
 
 ### Usage Examples
 
-In this example, there are 3 different options defined. The first option converts the language.json file into multiple language files in one folder (1 json file for each language). The second example converts the language.json into one language file. The destType has to be configured to `file`. The third example shows a configurable prefix and suffix for each language key.
+In this example, there are 3 different options defined. The first option converts the language.json file into multiple language files in one folder (1 json file for each language). The second example converts the language.json into one language file. The destType has to be configured to `file`. The third example shows a configurable prefix and suffix for each language key. Be aware, that only 1 input file is allowed for every task.
 
 ```js
 grunt.initConfig({
@@ -113,6 +113,7 @@ The file will then be converted to one or multiple language files (according to 
     "test_key2": "Dies ist auch ein Test-Schlüssel"
   }
 }
+```
 
 ## Release History
 _(Nothing yet)_
