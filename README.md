@@ -17,14 +17,14 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-convert-language-json');
 ```
 
-## The "convert_language_json" task
+## The "convertLanguageJson" task
 
 ### Overview
-In your project's Gruntfile, add a section named `convert_language_json` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `convertLanguageJson` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
-  convert_language_json: {
+  convertLanguageJson: {
     options: {
       // Task-specific options go here.
     },
@@ -61,21 +61,21 @@ In this example, there are 3 different options defined. The first option convert
 
 ```js
 grunt.initConfig({
-  convert_language_json: {
-		output_in_folder: {
+  convertLanguageJson: {
+		outputInFolder: {
 			files: [{
 				src: 'test/language.json',
 				dest: 'tmp/folder'
 			}]
 		},
-		output_as_single_file: {
+		outputAsSingleFile: {
 			files: [{
 				src: 'test/language.json',
 				dest: 'tmp/file/lang.json',
 				destType: 'file'
 			}]
 		},
-		output_in_folder_with_prefix_suffix: {
+		outputInFolderWithPrefixSuffix: {
 			options: {
 				prefix: 'prefix.',
 				suffix: '.suffix'
@@ -99,6 +99,10 @@ The language.json needs to have exactly the following structure:
   "test_key2": {
     "en": "This is also a test key.",
     "de": "Dies ist auch ein Test-Schlüssel"
+  },
+  "test_key3": {
+    "en": "Even this is a test key.",
+    "de": "Auch das ist ein Test-Schlüssel"
   }
 }
 ```
@@ -108,14 +112,17 @@ The file will then be converted to one or multiple language files (according to 
 {
   "en": {
     "test_key1": "This is a test key.",
-    "test_key2": "This is also a test key."
+    "test_key2": "This is also a test key.",
+    "test_key3": "Even this is a test key."
   },
   "de": {
     "test_key1": "Dies ist ein Test-Schlüssel",
-    "test_key2": "Dies ist auch ein Test-Schlüssel"
+    "test_key2": "Dies ist auch ein Test-Schlüssel",
+    "test_key3": "Auch das ist ein Test-Schlüssel"
   }
 }
 ```
 
 ## Release History
-_(Nothing yet)_
+- `0.1.1`: Rename to convertLanguageJson
+- `0.1.0`: Initial Release

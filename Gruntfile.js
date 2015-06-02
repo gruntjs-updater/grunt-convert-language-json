@@ -19,28 +19,28 @@ module.exports = function(grunt) {
 		},
 
 		// Configuration to be run (and then tested).
-		convert_language_json: {
-			output_in_folder: {
+		convertLanguageJson: {
+			outputInFolder: {
 				files: [{
 					src: 'test/language.json',
 					dest: 'tmp/folder'
 				}]
 			},
-			output_as_single_file: {
+			outputAsSingleFile: {
 				files: [{
 					src: 'test/language.json',
 					dest: 'tmp/file/lang.json',
 					destType: 'file'
 				}]
 			},
-			output_in_folder_with_prefix_suffix: {
+			outputInFolderWithPrefixSuffix: {
 				options: {
 					prefix: 'prefix.',
 					suffix: '.suffix',
 				},
 				files: [{
 					src: 'test/language.json',
-					dest: 'tmp/folder_prefix'
+					dest: 'tmp/folder-prefix'
 				}]
 			}
 
@@ -55,6 +55,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-clean');
 
 	// Register the default task which starts the conversion
-	grunt.registerTask('default', ['clean', 'convert_language_json']);
+	grunt.registerTask('default', ['clean', 'convertLanguageJson']);
 
 };

@@ -10,7 +10,7 @@
 
 module.exports = function(grunt) {
 
-	grunt.registerMultiTask('convert_language_json', 'This Grunt plugin converts the structure of a language.json', function() {
+	grunt.registerMultiTask('convertLanguageJson', 'This Grunt plugin converts the structure of a language.json', function() {
 
 		var options = this.options({
 			prefix: "",

@@ -1,7 +1,7 @@
 {
 	"name": "grunt-convert-language-json",
 	"description": "This Grunt plugin converts the structure of a language.json",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"homepage": "https://github.com/ssc-hrep3/grunt-convert-language-json",
 	"author": {
 		"name": "Sebastian Schrepfer"
