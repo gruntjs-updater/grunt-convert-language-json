@@ -1,39 +1,42 @@
 {
-	"name": "grunt-convert-language-json",
-	"description": "This Grunt plugin converts the structure of a language.json",
-	"version": "0.1.1",
-	"homepage": "https://github.com/ssc-hrep3/grunt-convert-language-json",
-	"author": {
-		"name": "Sebastian Schrepfer"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/ssc-hrep3/grunt-convert-language-json.git"
-	},
-	"bugs": {
-		"url": "https://github.com/ssc-hrep3/grunt-convert-language-json/issues"
-	},
-	"licenses": [
-		{
-			"type": "Apache",
-			"url": "https://github.com/ssc-hrep3/grunt-convert-language-json/blob/master/LICENSE-Apache"
-		}, {
-			"type": "2.0",
-			"url": "https://github.com/ssc-hrep3/grunt-convert-language-json/blob/master/LICENSE-2.0"
-		}
-	],
-	"engines": {
-		"node": ">= 0.8.0"
-	},
-	"scripts": {
-		"test": "grunt test"
-	},
-	"devDependencies": {
-		"grunt-contrib-clean": "^0.5.0",
-		"grunt": "~0.4.5"
-	},
-	"peerDependencies": {
-		"grunt": "~0.4.5"
-	},
-	"keywords": ["gruntplugin"]
+  "name": "grunt-convert-language-json",
+  "description": "This Grunt plugin converts the structure of a language.json",
+  "version": "0.2.0",
+  "homepage": "https://github.com/ssc-hrep3/grunt-convert-language-json",
+  "author": {
+    "name": "Sebastian Schrepfer"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ssc-hrep3/grunt-convert-language-json.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ssc-hrep3/grunt-convert-language-json/issues"
+  },
+  "licenses": [
+    {
+      "type": "Apache",
+      "url": "https://github.com/ssc-hrep3/grunt-convert-language-json/blob/master/LICENSE-Apache"
+    },
+    {
+      "type": "2.0",
+      "url": "https://github.com/ssc-hrep3/grunt-convert-language-json/blob/master/LICENSE-2.0"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt": "~0.4.5"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.5"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
 }
