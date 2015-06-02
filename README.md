@@ -124,5 +124,5 @@ The file will then be converted to one or multiple language files (according to 
 ```
 
 ## Release History
-- `0.1.1`: Rename to convertLanguageJson
+- `0.2.0`: Rename to convertLanguageJson
 - `0.1.0`: Initial Release
